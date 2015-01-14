@@ -19,7 +19,7 @@ function ContextualMenu(idObject){
     	$(document).on(event, element, function(event){
 	    	 myself.removeContextualMenu();
 			 triggerHandler($(event.originalEvent.target));
-			 var menuNode = $('<div class="popupMenu" id="' + myself.id + '"><div class="popupMenuBackground"></div><ul></ul></div>');
+			 var menuNode = $('<div class="contextualMenu" id="' + myself.id + '"><div class="contextualMenuBackground"></div><ul></ul></div>');
 			 console.log(event);
 			 menuNode.css('left', event.pageX);
 			 menuNode.css('top', event.pageY);
@@ -88,7 +88,7 @@ function ContextualMenu(idObject){
 	    });
 	    
     	if(item.items.length){
-	    	var subMenu = $('<div class="popupMenu submenu" id="' + item.id + '"><div class="popupMenuBackground"></div><ul></ul></div>');
+	    	var subMenu = $('<div class="contextualMenu submenu" id="' + item.id + '"><div class="contextualMenuBackground"></div><ul></ul></div>');
 	    		subMenu.css('left', $(this)[0].offsetWidth+'px');
 				subMenu.css('top', $(this)[0].offsetTop+'px');
 				
